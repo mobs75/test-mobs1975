@@ -6,6 +6,7 @@ env:
 tasks:
 
   helloworld:
+
     cmds:
       - echo "hello, $WORD!"
     env:
@@ -17,5 +18,9 @@ tasks:
     env:
       GREETING: bye
 
+  buildpython:
+    cmds:
+      - python hello.py
+
   all:
-    deps: [helloworld, byeworld]
+    deps: [buildpython]
