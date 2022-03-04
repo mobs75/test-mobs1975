@@ -1,0 +1,21 @@
+version: '3'
+
+env:
+  WORD: world
+
+tasks:
+
+  helloworld:
+    cmds:
+      - echo "hello, $WORD!"
+    env:
+      GREETING: hello
+
+  byeworld:
+    cmds:
+      - echo "$GREETING, $WORD!"
+    env:
+      GREETING: bye
+
+  all:
+    deps: [helloworld, byeworld]
